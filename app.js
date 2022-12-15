@@ -19,6 +19,7 @@ app.set('view engine', 'hbs')
 //---middleware---//
 app.use(express.urlencoded({ extended: true }))//解析POST傳入
 app.use(methodOverride('_method'))//覆蓋method：get->put get->delete
+app.use(express.static('public'))
 
 //---routes---//
 app.use(routes)

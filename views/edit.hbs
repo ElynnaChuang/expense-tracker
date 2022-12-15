@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-10 col-sm-9 col-lg-7 mx-auto">
+    <form action="" method="POST">
+    {{!-------------------- Title --------------------}}
+      <div class="row g-3 align-items-center mb-5">
+        <div class="col-3 col-sm-2">
+          <label class="col-form-label" for="">＊為必填</label>
+        </div>
+        <div class="col text-center">
+          <h5>請修改你的支出</h5>
+        </div>
+      </div>
+
+    {{!-------------------- Input --------------------}}
+      <div class="row g-3 align-items-center mb-5">
+        <div class="col-3 col-sm-2">
+          <label class="col-form-label form-label-name" for="amount">金額*</label>
+        </div>
+        <div class="col">
+          <input class="form-control form-input" type="number" id="amount" name="amount" value="{{amount}}" require>
+        </div>
+      </div>
+
+      <div class="row g-3 align-items-center mb-5">
+        <div class="col-3 col-sm-2">
+          <label class="col-form-label form-label-name" for="name">名稱*</label>
+        </div>
+        <div class="col">
+          <input class="form-control form-input" type="text" id="name" name="name" value="{{name}}" require>
+        </div>
+      </div>
+
+      <div class="row g-3 align-items-center mb-5">
+        <div class="col-3 col-sm-2">
+          <label class="col-form-label form-label-name" for="date">日期*</label>
+        </div>
+        <div class="col">
+          <input class="form-control form-input" type="date" id="date" name="date" value="{{date}}" require>
+        </div>
+      </div>
+
+      <div class="row g-3 align-items-center mb-5">
+        <div class="col-3 col-sm-2">
+          <label class="col-form-label form-label-name" for="category">類別*</label>
+        </div>
+        <div class="col">
+          <select class="form-select form-input " id="category" name="category" required>
+            {{!-- {{#isSelected categories selectedValue}}{{/isSelected}} --}}
+          </select>
+        </div>
+      </div>
+
+  {{!-------------------- Button --------------------}}
+      <div class="row g-3 align-items-center mb-3">
+        <div class="col-3 col-sm-2">
+        </div>
+        <div class="d-grid col">
+          <button class="btn btn-success new-account-btn" type="button">儲存修改</button>
+        </div>
+      </div>
+
+      <div class="row g-3 align-items-center">
+        <div class="col-3 col-sm-2">
+        </div>
+        <div class="d-grid col">
+          <a href="/" class="btn btn-secondary new-account-btn">取消</a>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+/* ------ 金額區 ------ */
+.total-amount-session {
+  margin: auto 0px;
+  padding: 20px 12px;
+  background-color: rgb(212, 212, 212);
+  border-radius: 0.5em;
+}
+
+/* 總金額 */
+.total-amount-title {
+  font-size: 32px;
+  line-height: 100%;
+  text-align: center;
+}
+/* 20000 NTD */
+.total-amount {
+  display: flex;
+  align-items: end;
+}
+
+.total-amount-number {
+  margin: 0 0 0 auto;
+  line-height: 80%;
+  font-size: 40px;
+}
+
+.total-amount-unit {
+  margin: 0 auto 0 0;
+  font-size: 20px;
+}
+
+/* ------ 項目區 ------ */
+.records-session{
+  display: flex;
+  flex-direction: column;
+  height: 45vh;
+  overflow-y: scroll;
+}
+
+.record-item {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: auto 0px;
+  padding: 16px 12px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 0.5em;
+}
+
+.icon {
+  flex-basis: 0;
+  font-size: 36px;
+}
+
+.title {
+  flex: 1;
+}
+
+.name {
+  font-size: 24px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+.amount {
+  flex-basis: content;
+  font-size: 32px;
+  margin-left: auto;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-basis: content;
+}
+
+/* ------ 底部 ------ */
+/* ------ 表單 ------ */
+.new-account-btn, .form-label-name {
+  font-size: 20px;
+}
+
+.form-input {
+  height: 44px;
+  font-size: 18px;
+}
+
+/* ============== RWD ============== */
+@media screen and (min-width : 576px) {
+  /* 總金額 */
+  .total-amount-title {
+    font-size: 24px;
+    line-height: 100%;
+    text-align: left;
+    margin-top: auto;
+  }
+
+  .total-amount-unit {
+    margin-right: 0;
+    font-size: 20px;
+  }
+
+  /* ------ 項目區 ------ */
+  .records-session{
+    height: 48vh;
+  }
+}
