@@ -24,17 +24,18 @@ router.post('/', (req, res) => {
 router.get('/:id/edit', (req, res) => {
   const _id = req.params.id
   Record.findOne({ _id })
+  .lean()
   .then(record => {
-    const { name, date, amount, categoryID} = record
+    const { categoryID } = record
     Category.findById(categoryID)
-    .then(category => {
+      .then(category => {
           const optionHTML = isSelected(categories, category.name)
-          res.render('edit', { name, date, amount, optionHTML })
+          res.render('edit', { record, optionHTML })
         })
     })
 })
 
-router.post('/:id/edit', (req, res) => {
+router.put('/:id', (req, res) => {
   const { name, date, amount, category } = req.body
   Category.findOne({ name: category })
     .then((category) => {
