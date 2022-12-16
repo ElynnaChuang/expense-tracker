@@ -45,7 +45,7 @@
         </div>
         <div class="col">
           <select class="form-select form-input " id="category" name="category" required>
-            {{!-- {{#isSelected categories selectedValue}}{{/isSelected}} --}}
+            {{{optionHTML}}}
           </select>
         </div>
       </div>
@@ -54,9 +54,11 @@
       <div class="row g-3 align-items-center mb-3">
         <div class="col-3 col-sm-2">
         </div>
-        <div class="d-grid col">
-          <button class="btn btn-success new-account-btn" type="button">儲存修改</button>
-        </div>
+        <form action="/records/{{_id}}/edit" method="POST" class="bg-white pt-3 pb-5 new-account-bar">
+          <div class="d-grid col">
+            <button class="btn btn-success new-account-btn" type="submit">儲存修改</button>
+          </div>
+        </form>
       </div>
 
       <div class="row g-3 align-items-center">

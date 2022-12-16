@@ -14,7 +14,7 @@ db.once('open', () => {
         { length: 10 },
         (_, i) => Record.create({
           name: `name-${i+1}`,
-          date: `2022/12/15`,
+          date: `2022-12-15`,
           amount: (i+1)*10,
           categoryID
         })
