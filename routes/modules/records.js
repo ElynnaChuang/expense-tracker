@@ -86,7 +86,17 @@ router.put('/:id', (req, res) => {
 
 //---刪除---//
 router.delete('/:id', (req, res) => {
-
+  const _id = req.params.id
+  return Record.findOne({ _id })
+    .then(record => {
+      if (!record) return res.render('error')
+      record.remove()
+    })
+    .then(() => res.redirect('/'))
+    .catch(err => {
+      console.log(err)
+      res.render('error', { err })
+    })
 })
 
 

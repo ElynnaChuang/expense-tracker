@@ -59,14 +59,24 @@
         </div>
       </div>
 
-      <div class="row g-3 align-items-center">
+      <div class="row g-3 align-items-center mb-3">
         <div class="col-3 col-sm-2">
         </div>
         <div class="d-grid col">
           <a href="/" class="btn btn-secondary new-account-btn">取消</a>
         </div>
       </div>
-
     </form>
+
+    <form action="/records/{{record._id}}?_method=DELETE" method="POST" class=>
+      <div class="row g-3 align-items-center">
+          <div class="col-3 col-sm-2">
+          </div>
+          <div class="d-grid col">
+              <button class="btn btn-danger new-account-btn" type="submit">刪除支出</button>
+          </div>
+      </div>
+    </form>
+
   </div>
 </div>
