@@ -1,19 +1,24 @@
 if(process.env.NODE_ENV !== 'production') {
   require("dotenv").config()
 }
-
+const CATEGORY = require('../../category.json').CATEGORY
 const Category = require('../category')
 const db = require('../../config/mongoose')
-const CATEGORY = {
-  家居物業: "fa-solid fa-house",
-  交通出行: "fa-solid fa-van-shuttle",
-  休閒娛樂: "fa-solid fa-face-grin-beam",
-  餐飲食品: "fa-solid fa-utensils",
-  其他: "fa-solid fa-pen"
-}
+
+const categories = Object.keys(CATEGORY).map(key => {
+  return {'name': key, 'icon': CATEGORY[key]}
+})
 
 db.once('open', () => {
-
-  console.log('categorySeeder done');
-  process.exit()
+  return Promise.all(Array.from(
+    { length: categories.length },
+    (v, i) => {
+      const { name, icon } = categories[i]
+      return Category.create({ name, icon })
+    }
+  ))
+  .then(() => {
+    console.log('categorySeeder done');
+    return process.exit()
+  })
 })
