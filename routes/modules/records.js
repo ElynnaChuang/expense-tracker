@@ -43,7 +43,7 @@ router.get('/:id/edit', (req, res) => {
       const { categoryID } = record
       Category.findById(categoryID)
         .then(category => {
-          const optionHTML = isSelected(categories, category.name)
+          const optionHTML = isSelected('edit', categories, category.name)
           res.render('edit', { record, optionHTML })
         })
         .catch(err => {

@@ -30,6 +30,9 @@
 }
 
 /* ------ 項目區 ------ */
+.records-session::-webkit-scrollbar {
+  display: none;
+}
 .records-session{
   display: flex;
   flex-direction: column;
@@ -41,7 +44,7 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  margin: auto 0px;
+  margin: 0px;
   padding: 16px 12px;
   background-color: rgb(235, 235, 235);
   border-radius: 0.5em;
@@ -94,7 +97,7 @@
     font-size: 24px;
     line-height: 100%;
     text-align: left;
-    margin-top: auto;
+    margin: auto;
   }
 
   .total-amount-unit {
@@ -104,6 +107,6 @@
 
   /* ------ 項目區 ------ */
   .records-session{
-    height: 48vh;
+    height: 47vh;
   }
 }
