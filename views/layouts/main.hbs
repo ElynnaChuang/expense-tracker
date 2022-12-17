@@ -12,11 +12,18 @@
 <body class="bg-light">
   <nav class="navbar navbar-dark bg-dark py-3">
     <div class="container">
-      <a class="navbar-brand" href="/">
-        <i class="fa-solid fa-file-invoice-dollar fa-xl me-2"></i>
-        <strong>家庭記事本</strong>
-      </a>
-      <a href="/users/logout" class="btn btn-outline-secondary">登出</a>
+      {{#if isAuthenticated}}
+        <a class="navbar-brand" href="/">
+          <i class="fa-solid fa-file-invoice-dollar fa-xl me-2"></i>
+          <strong>{{user.name}}</strong> 的家庭記帳本
+        </a>
+        <a href="/users/logout" class="btn btn-outline-secondary">登出</a>
+      {{else}}
+        <a class="navbar-brand" href="/">
+          <i class="fa-solid fa-file-invoice-dollar fa-xl me-2"></i>
+          家庭記帳本
+        </a>
+      {{/if}}
     </div>
   </nav>
 
