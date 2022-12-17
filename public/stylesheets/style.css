@@ -2,7 +2,7 @@
 .total-amount-session {
   margin: auto 0px;
   padding: 20px 12px;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(199, 199, 199);
   border-radius: 0.5em;
 }
 
@@ -37,7 +37,9 @@
   display: flex;
   flex-direction: column;
   height: 45vh;
+  padding: 12px;
   overflow-y: scroll;
+  background-color: rgb(255, 255, 255);
 }
 
 .record-item {
@@ -107,6 +109,6 @@
 
   /* ------ 項目區 ------ */
   .records-session{
-    height: 47vh;
+    height: 53.8vh;
   }
 }
