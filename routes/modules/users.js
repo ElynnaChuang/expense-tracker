@@ -4,19 +4,22 @@ const router = express.Router()
 const User = require('../../models/user')
 
 const bcrypt = require('bcryptjs')
+const passport = require('passport')
 
 //---登入---//
 router.get('/login', (req, res) => {
   res.render('login')
 })
 
-router.post('/login', (req, res) => {
-
-})
+router.post('/login', passport.authenticate('local',{
+  failureRedirect: '/users/login',
+  successRedirect: '/'
+}))
 
 //---登出---//
-router.post('/logout', (req, res) => {
-
+router.get('/logout', (req, res) => {
+  req.logout()
+  res.redirect('/')
 })
 
 //---註冊---//
