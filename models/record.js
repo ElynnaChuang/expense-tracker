@@ -14,12 +14,12 @@ const recordSchema = new Schema({
     type: Number,
     required: true
   },
-  // userID: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'User',
-  //   index: true,
-  //   required: true
-  // },
+  userID: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    index: true,
+    required: true
+  },
   categoryID: {
     type: Schema.Types.ObjectId,
     ref: 'Category',

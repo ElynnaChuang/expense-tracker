@@ -17,11 +17,12 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+  const userID = req.user._id //登入後收到
   const { name, date, amount, category } = req.body
   Category.findOne({ name: category })
     .then((category) => {
       const categoryID = category._id
-      Record.create({ name, date, amount, categoryID})
+      Record.create({ name, date, amount, categoryID, userID})
         .then(() => res.redirect('/'))
         .catch(err => {
           console.log(err)
@@ -37,7 +38,8 @@ router.post('/', (req, res) => {
 //---修改---//
 router.get('/:id/edit', (req, res) => {
   const _id = req.params.id
-  Record.findOne({ _id })
+  const userID = req.user._id //登入後收到
+  Record.findOne({ _id, userID })
     .lean()
     .then(record => {
       const { categoryID } = record
@@ -61,9 +63,10 @@ router.put('/:id', (req, res) => {
   const { name, date, amount, category } = req.body
   Category.findOne({ name: category })
     .then((category) => {
+      const userID = req.user._id //登入後收到
       const _id = req.params.id
       const categoryID = category._id
-      Record.findOne({ _id })
+      Record.findOne({ _id, userID })
         .then((record) => {
           if (!record) return res.render('error')
           record.name = name
@@ -86,8 +89,9 @@ router.put('/:id', (req, res) => {
 
 //---刪除---//
 router.delete('/:id', (req, res) => {
+  const userID = req.user._id //登入後收到
   const _id = req.params.id
-  return Record.findOne({ _id })
+  return Record.findOne({ _id, userID })
     .then(record => {
       if (!record) return res.render('error')
       record.remove()
