@@ -2,6 +2,7 @@
   <div class="col-sm-8 mx-auto">
     <div class="card card-body login-card py-3 px-4 mt-4">
       <h1 class="mx-auto mb-5 text-primary">登入</h1>
+      {{> message}}
       <form action="/users/login" method="POST">
         <div class="form-group mb-4">
           <label for="email">E-mail</label>
