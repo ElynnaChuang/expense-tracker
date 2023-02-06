@@ -5,7 +5,7 @@ const app = express()
 if(process.env.NODE_ENV !== 'production') {
   require("dotenv").config()
 }
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 const routes = require('./routes')
 require('./config/mongoose')
 const usePassport = require('./config/passport')
