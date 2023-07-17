@@ -1,6 +1,6 @@
 module.exports = (page, array, value) => {
   let option = ''
-  if(page === 'edit') {
+  if (page === 'edit') {
     if (array) {
       for (let i = 0; i < array.length; i++) {
         if (array[i].name === value) {
@@ -12,7 +12,7 @@ module.exports = (page, array, value) => {
     }
   }
 
-  if(page === 'index') {
+  if (page === 'index') {
     if (array) {
       for (let i = 0; i < array.length; i++) {
         if (String(array[i]._id) === value) {
